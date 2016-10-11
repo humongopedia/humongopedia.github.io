@@ -1,17 +1,20 @@
 import React, { PropTypes } from 'react'
 import { Card, CardHeader, CardText } from 'material-ui/Card'
 
-const ContentItem = ({text, link, contents}) => (
-	<a href={link}>
-		<Card className="content-list__item">
-			<CardHeader title={text}/> {(contents && contents.length > 0)
-		? <CardText>
-		<ContentList data={contents} />
-		</CardText>
+const ContentItem = ({text, link, contents}) => {
+	const hasMoreContent = contents && contents.length > 0
+	const card = (<Card className="content-list__item">
+			<CardHeader title={text}/> {hasMoreContent
+		? (
+		<CardText>
+						<ContentList data={contents}/>
+					</CardText>
+		)
 		: null}
-		</Card>
-	</a>
-)
+		</Card>)
+	return hasMoreContent ? card : (<a href={link}>{card}</a>)
+}
+
 const ContentList = ({data}) => {
 	return (
 		<div className="content-list">

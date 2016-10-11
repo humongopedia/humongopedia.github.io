@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import { green100, green500, green700 } from 'material-ui/styles/colors'
-import data from '../public/data/root__Big Data__Big Data.json'
 
 import MainNav from './components/MainNav.jsx'
 import TitleBar from './components/TitleBar.jsx'
@@ -32,7 +31,7 @@ class App extends Component {
 					<TitleBar/>
 					<MainNav/>
 					<section className="content">
-						<ContentList data={data}/>
+						<ContentList data={this.props.data || []}/>
 					</section>
 				</div>
 			</MuiThemeProvider>

@@ -5,7 +5,11 @@ import './index.css'
 import './App.scss'
 import './content-list.scss'
 
-ReactDOM.render(
-	<App />,
-	document.getElementById('root')
-)
+export const render = data => {
+	ReactDOM.render(
+		<App data={data} />,
+		document.getElementById('root')
+	)
+}
+
+render()
