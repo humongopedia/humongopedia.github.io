@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import App from './App.jsx'
 import './index.css'
 import './App.scss'
+import './content-list.scss'
 
 ReactDOM.render(
 	<App />,
