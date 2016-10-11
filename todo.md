@@ -1,0 +1,2 @@
+- mobile responsive
+- embedded lists title gets messed up (see javascript or react)
